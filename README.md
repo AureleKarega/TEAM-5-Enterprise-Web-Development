@@ -1,5 +1,5 @@
 # TEAM-5-Enterprise-Web-Development
 Team Members:
-Aurel Karega
+Aurele Karega
 Alain Christian Mugenga
 Ella Reine Dusenayo
