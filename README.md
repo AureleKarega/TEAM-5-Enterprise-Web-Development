@@ -3,7 +3,7 @@ Team Members:
 Aurele Karega
 Alain Christian Mugenga
 Ella Reine Dusenayo
-
+Nina Bwiza
 
 # Project Description
 This project processes MoMo SMS transaction data (XML format), cleans and categorizes it, stores it in a relational database (SQLite), and builds a frontend dashboard to analyze and visualize the data.
