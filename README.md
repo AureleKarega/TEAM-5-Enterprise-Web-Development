@@ -37,3 +37,5 @@ Columns used:
 - *In Progress*  
 - *Done*  
 
+# Entity Relationship Diagram (ERD) Design
+Draw.io link: https://drive.google.com/file/d/1tRqgZ-rjlXy6QHOeCOQVmFjhhe5QE9By/view?usp=sharing
