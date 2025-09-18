@@ -1,0 +1,9 @@
+{
+  "user_id": 1,
+  "msisdn": "+250788000001",
+  "first_name": "Alice",
+  "last_name": "Uwimana",
+  "email": "alice@example.com",
+  "created_at": "2025-06-01T12:00:00Z"
+}
+

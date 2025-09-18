@@ -1,0 +1,8 @@
+{
+  "log_id": 10,
+  "transaction_id": 1000001,
+  "level": "INFO",
+  "message": "Parsed XML, matched user by MSISDN",
+  "processed_by": "ingest_service",
+  "created_at": "2025-09-10T08:15:05Z"
+}
