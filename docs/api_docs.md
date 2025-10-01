@@ -1,10 +1,10 @@
-# 📘 MoMo SMS Transactions API Documentation
+# MoMo SMS Transactions API Documentation
 
 This REST API provides secure access to mobile money SMS transaction records. All endpoints require Basic Authentication.
 
 ---
 
-## 🔐 Authentication
+## Authentication
 
 - **Method**: Basic Auth  
 - **Header**:  
@@ -14,7 +14,7 @@ This REST API provides secure access to mobile money SMS transaction records. Al
 
 ---
 
-## 📂 Endpoints Overview
+## Endpoints Overview
 
 | Method | Endpoint                  | Description                        |
 |--------|---------------------------|------------------------------------|
