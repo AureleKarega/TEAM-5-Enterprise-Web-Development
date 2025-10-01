@@ -25,10 +25,32 @@ This REST API provides secure access to mobile money SMS transaction records. Al
 | DELETE | `/transactions/{id}`      | Delete a transaction               |
 
 ---
+##  GET /transactions
 
+**Description**: Returns a list of all SMS transactions.
+
+**Request Example**:
+```http
+GET /transactions
+Authorization: Basic YWRtaW46cGFzczEyMw==
+Response Example:
+[
+  {
+    "id": 0,
+    "type": "deposit",
+    "amount": "5000",
+    "sender": "0788123456",
+    "receiver": "0788111222",
+    "timestamp": "2023-08-01T14:23:00"
+  }
+]
+Error Codes:
+- 401 Unauthorized – Missing or invalid credentials
+```
 ## GET /transactions/{id}
-Description: Returns a single transaction by ID.
-Request Example:
+**Description**: Returns a single transaction by ID.
+**Request Example**:
+```http
 GET /transactions/5
 Authorization: Basic YWRtaW46cGFzczEyMw==
 Response Example:
@@ -43,10 +65,11 @@ Response Example:
 Error Codes:
 - 401 Unauthorized
 - 404 Not Found – Transaction ID does not exist
-
+```
 ## POST /transactions
-Description: Creates a new transaction.
-Request Example:
+**Description**: Creates a new transaction.
+**Request Example**:
+```http
 POST /transactions
 Authorization: Basic YWRtaW46cGFzczEyMw==
 Content-Type: application/json
@@ -67,12 +90,13 @@ Response Example:
 Error Codes:
 - 400 Bad Request – Missing or invalid fields
 - 401 Unauthorized
-
+```
 
 
 ## PUT /transactions/{id}
-Description: Updates an existing transaction.
-Request Example:
+**Description**: Updates an existing transaction.
+**Request Example**:
+```http
 PUT /transactions/3
 Authorization: Basic YWRtaW46cGFzczEyMw==
 Content-Type: application/json
@@ -93,7 +117,7 @@ Error Codes:
 - 400 Bad Request
 - 401 Unauthorized
 - 404 Not Found
-
+```
 
 ## DELETE /transactions/{id}
 **Description**: Deletes a transaction by ID.
@@ -106,17 +130,7 @@ Response Example:
 {
   "message": "Transaction deleted"
 }
-```
 Error Codes:
 - 401 Unauthorized
 - 404 Not Found
-
-
-##  GET /transactions
-
-**Description**: Returns a list of all SMS transactions.
-
-**Request Example**:
-```http
-GET /transactions
-Authorization: Basic YWRtaW46cGFzczEyMw==
+```
