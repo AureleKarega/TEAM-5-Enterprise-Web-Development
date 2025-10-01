@@ -1,0 +1,103 @@
+MoMo SMS API Report
+1. Introduction to API Security.
+
+In modern software, APIs serve as the basis of data sharing between applications, services and users. It is important to have secure communication between clients and APIs to ensure that confidential information is not intercepted and abused.
+
+In this project, the MoMo SMS dataset was exposed over a REST API developed in Python using the in-built module in the Python language, which is known as the http.server. Basic Authentication (sending usernames and passwords in the HTTP header) was used to protect the API. Although this approach offers some little protection, there are serious shortcomings which are dealt with subsequently. More robust systems, including JWT (JSON Web Tokens) and OAuth2 are suggested in practice.
+
+2. API Documentation
+
+The REST API supports the CRUD operations of the SMS transaction records. All endpoints should be authenticated.
+
+GET /transactions
+
+Description: Read all the transactions.
+
+answer: JSON array of transactions.
+
+Errors: 401 Unauthorized
+
+GET /transactions/{id}
+
+Description: Read a certain transaction by its ID.
+
+Response: JSON object of the transaction.
+
+When: 401 Unauthorized, 404 Not Found.
+
+POST /transactions
+
+Description: Add transaction.
+
+Request Body: transaction details in the form of a JSON object.
+
+Response: Success message
+
+Errors: 400 Bad request, 401 Unauthorized, 409 Conflict.
+
+PUT /transactions/{id}
+
+Description: Update a transaction by his ID.
+
+Request Body: JSON object, which contains fields to update.
+
+Response: Success message
+
+Errors: 400 Bad Request, 401 Unauthorized, 404 Not Found.
+
+DELETE /transactions/{id}
+
+Description: Delete an ID transaction.
+
+Response: Success message
+
+Error: 401 Unauthorized, 404 Not Found.
+
+3. Results of DSA Comparison
+
+Two search strategies were tested and applied to 20 test records:
+
+Linear Search (O(n))
+
+Checks the records one at a time, until the target is located.
+
+Slower for larger datasets.
+
+Sample run time: 0.00015s at 20 records.
+
+Dictionary Lookup (O(1))
+
+records transactions in a dictionary where the key is ID.
+
+Presents real time lookups without regard to size of a dataset.
+
+Run time: 20 records approximately take 0.000001s.
+
+Outcome: Dictionary search can be much faster than linear search particularly when the size of the collection is increased.
+
+Further Improvement:
+
+Binary Search (O(log n)) of sorted lists.
+
+B-trees or Hash Indexing in database-based APIs to very large data sets.
+
+
+
+4. Consideration of Basic Auth Limitations.
+
+Although the Basic Authentication has been applied to this project, it is not advisable in production environment as the following reasons:
+
+credentials are fixed: The user name and password have to be sent along with each request.
+
+Base64 is not encryption: With the credentials, one can easily decrypt them in case of interception of traffic.
+
+No automatic time out:When undermined, credentials are preserved until manually revoked.
+
+No fine-grained control: Endpoints do not have roles or scopes, they share the same credentials.
+
+Better Alternatives:
+
+The JWT (JSON Web Tokens) offers time-limited stateless tokens to minimize the chances of replay attacks.
+
+OAuth2 offers delegated access, refresh tokens, and role-based permissions, which makes it the standard of choice to keep up with the current API security.
+
